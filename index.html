@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>訪問介護 Niceケア | 国立市の訪問介護・障害福祉サービス</title>
+    <meta name="description" content="東京都国立市に根ざした訪問介護・居宅介護支援。暮らしを支え、ともに歩むパートナーとして, 安心のサービスを提供します。">
+    <!-- Google Fonts (日本語フォント) -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== 基本設定 ===== */
+        :root {
+            --primary-color: #78a55a; /* 安心感のあるグリーン */
+            --accent-color: #e67e22;  /* 温かみのあるオレンジ */
+            --bg-light: #fdfaf5;      /* 柔らかなベージュ背景 */
+            --text-color: #444;
+            --header-height: 70px;    /* ヘッダーの高さの目安 */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            /* 固定ヘッダーの分だけスクロール位置を調整 */
+            scroll-padding-top: calc(var(--header-height) + 20px);
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: #fff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== ヘッダー ===== */
+        header {
+            background: #fff;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 0;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .logo span {
+            font-size: 0.75rem;
+            color: #888;
+            font-weight: 400;
+        }
+
+        .pc-nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        .pc-nav li { margin-left: 20px; }
+
+        .pc-nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        .pc-nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-btn {
+            background: var(--primary-color);
+            color: #fff !important;
+            padding: 8px 20px;
+            border-radius: 50px;
+            transition: background 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: #628a48;
+        }
+
+        /* ===== メインビジュアル ===== */
+        .hero {
+            height: 70vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), 
+                        url('https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .hero-content h2 {
+            font-size: 2.2rem;
+            margin: 15px 0;
+            color: #2c3e50;
+            line-height: 1.4;
+        }
+
+        .sub-copy {
+            color: var(--primary-color);
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            font-size: 1.1rem;
+        }
+
+        .main-text {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+
+        /* ===== 各セクション共通 ===== */
+        .section { padding: 80px 0; }
+        
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 15px;
+            color: #333;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        .bg-light { background: var(--bg-light); }
+        .bg-primary-light { background: #eff5eb; }
+
+        /* ===== 強みセクション ===== */
+        .strength-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .strength-item {
+            text-align: center;
+            padding: 40px 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .strength-item .icon { font-size: 3rem; margin-bottom: 15px; }
+        
+        .strength-item h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        /* ===== 事業内容 ===== */
+        .service-box {
+            background: #fff;
+            margin-bottom: 40px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .service-header {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-header .num {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-right: 15px;
+            opacity: 0.8;
+            font-family: Arial, sans-serif;
+        }
+
+        .service-content { padding: 30px; }
+        
+        .service-category { 
+            margin-bottom: 30px; 
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .service-category h4 {
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .service-category ul { 
+            list-style: none; 
+            padding-left: 5px; 
+            color: #555;
+        }
+        
+        .service-category ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 1.5em;
+        }
+        
+        .service-category ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .service-summary {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px dashed #ccc;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* ===== 利用者様へ（新規） ===== */
+        .user-guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .user-message {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(120, 165, 90, 0.1);
+        }
+
+        .user-message h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .flow-list {
+            list-style: none;
+            position: relative;
+        }
+
+        .flow-item {
+            display: flex;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .flow-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 45px;
+            width: 2px;
+            height: calc(100% - 25px);
+            background: #ddd;
+        }
+
+        .flow-num {
+            width: 42px;
+            height: 42px;
+            background: var(--primary-color);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-right: 15px;
+            z-index: 1;
+        }
+
+        .flow-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .flow-text p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ===== ケアマネ様セクション ===== */
+        .cm-box {
+            border: 2px solid var(--primary-color);
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            background: #fff;
+            position: relative;
+        }
+
+        .cm-intro {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+
+        .cm-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+            margin: 30px 0;
+            gap: 10px;
+        }
+
+        .cm-list li {
+            background: var(--bg-light);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: bold;
+            color: #444;
+            border: 1px solid #e0d5c1;
+        }
+
+        .cm-footer {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        /* ===== お問い合わせフォーム（新規） ===== */
+        .contact-form-wrapper {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .form-group label span {
+            background: #e74c3c;
+            color: #fff;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(120, 165, 90, 0.2);
+        }
+
+        .submit-btn {
+            background: var(--accent-color);
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* ===== 採用情報 ===== */
+        .recruit-container {
+            text-align: center;
+            background: #fff;
+            padding: 50px 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .recruit-container h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .recruit-details {
+            max-width: 500px;
+            margin: 30px auto;
+            text-align: left;
+            padding: 30px;
+            background: #fafafa;
+            border-radius: 10px;
+            border: 1px solid #eee;
+        }
+
+        .check-list { 
+            list-style: none; 
+            margin-top: 15px; 
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        
+        .check-list li {
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .check-list li::before { 
+            content: '✨ '; 
+        }
+
+        .recruit-message {
+            font-weight: bold;
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+
+        /* ===== 事業所・お問い合わせ ===== */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .info-text dl {
+            display: flex;
+            flex-wrap: wrap;
+            border-top: 1px solid #ddd;
+        }
+
+        .info-text dt { 
+            width: 35%;
+            font-weight: bold; 
+            color: #333; 
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .info-text dd { 
+            width: 65%;
+            padding: 15px 0 15px 15px; 
+            margin-bottom: 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .contact-card {
+            background: #fdf2e9; /* 薄いオレンジ */
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            border-top: 5px solid var(--accent-color);
+        }
+
+        .contact-card h3 { 
+            margin-bottom: 20px; 
+            color: #333;
+        }
+        
+        .tel { 
+            font-size: 2rem; 
+            font-weight: bold; 
+            color: var(--accent-color); 
+            margin: 10px 0;
+            letter-spacing: 2px;
+        }
+        
+        .mail { 
+            font-weight: bold; 
+            margin: 15px 0; 
+            font-size: 1.1rem;
+        }
+        
+        .contact-note {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 20px;
+        }
+
+        /* ===== フッター ===== */
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+
+        /* ===== スマホ対応 (レスポンシブ) ===== */
+        @media (max-width: 768px) {
+            :root {
+                --header-height: 120px; /* スマホ時のヘッダー高さ目安 */
+            }
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .pc-nav { 
+                margin-top: 15px;
+                width: 100%;
+                overflow-x: auto;
+                padding-bottom: 5px;
+            }
+            .pc-nav ul {
+                justify-content: center;
+                min-width: 550px; /* スクロールできるように */
+            }
+            .pc-nav li { margin: 0 10px; }
+            .hero-content { padding: 20px; }
+            .hero-content h2 { font-size: 1.6rem; }
+            .section { padding: 50px 0; }
+            .cm-box { padding: 30px 15px; }
+            .check-list { grid-template-columns: 1fr; }
+            .info-text dt, .info-text dd { width: 100%; border-bottom: none; padding: 5px 0; }
+            .info-text dd { border-bottom: 1px solid #ddd; margin-bottom: 10px; padding-left: 0; }
+            .tel { font-size: 1.6rem; }
+            .contact-form-wrapper { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <h1>訪問介護 Niceケア</h1>
+                <span>国立市の訪問介護・障害福祉サービス</span>
+            </a>
+            <nav class="pc-nav">
+                <ul>
+                    <li><a href="#strength">強み</a></li>
+                    <li><a href="#services">事業内容</a></li>
+                    <li><a href="#user-guide">利用者様へ</a></li>
+                    <li><a href="#caremanager">ケアマネ様へ</a></li>
+                    <li><a href="#recruit">採用情報</a></li>
+                    <li><a href="#access" class="nav-btn">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- メインビジュアル -->
+        <section class="hero">
+            <div class="hero-content">
+                <p class="sub-copy">「暮らしを支え、ともに歩む。」</p>
+                <h2>住み慣れたご自宅で<br>安心して暮らしたい――</h2>
+                <p class="main-text">その想いを支える訪問介護サービスと、障害のある方の生活全般を支える居宅介護・重度訪問介護を提供しています。<br>地域の暮らしを、やさしく丁寧に支えていくパートナーです。</p>
+            </div>
+        </section>
+
+        <!-- 私たちの強み -->
+        <section id="strength" class="section">
+            <div class="container">
+                <h2 class="section-title">私たちの強み</h2>
+                <div class="strength-grid">
+                    <div class="strength-item">
+                        <div class="icon">🤝</div>
+                        <h3>地域密着の信頼</h3>
+                        <p>東京都国立市に根ざした支援で、利用者様・ご家族・ケアマネジャー様との信頼関係を大切にしています。</p>
+                    </div>
+                    <div class="strength-item">
+                        <div class="icon">✨</div>
+                        <h3>丁寧な連携</h3>
+                        <p>安心のサービス提供から、状況報告・ケアマネジャー様との情報共有まで、迅速・丁寧に対応します。</p>
+                    </div>
+                    <div class="strength-item">
+                        <div class="icon">🌱</div>
+                        <h3>継続した支援の設計</h3>
+                        <p>長期・重度の支援が必要な方にも、継続的で支えになる介護プランをご提案します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 事業内容 -->
+        <section id="services" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">事業内容</h2>
+                
+                <div class="service-box">
+                    <div class="service-header">
+                        <span class="num">01</span>
+                        <h3>訪問介護（介護保険）</h3>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-category">
+                            <h4>身体介護</h4>
+                            <ul>
+                                <li>食事介助 / 入浴介助 / 排泄介助</li>
+                                <li>更衣介助 / 体位変換 / 通院介助</li>
+                            </ul>
+                        </div>
+                        <div class="service-category">
+                            <h4>生活援助</h4>
+                            <ul>
+                                <li>掃除 / 洗濯 / 調理</li>
+                                <li>買い物代行 / 日常生活支援</li>
+                            </ul>
+                        </div>
+                        <p class="service-summary">利用者様が安心して日常の暮らしを送れるよう、<br>生活の“基盤づくり”を支えます。</p>
+                    </div>
+                </div>
+
+                <div class="service-box">
+                    <div class="service-header">
+                        <span class="num">02</span>
+                        <h3>居宅介護・重度訪問介護<br><small style="font-size:0.7em; font-weight:normal;">（障害福祉サービス）</small></h3>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-category">
+                            <h4>居宅介護</h4>
+                            <ul>
+                                <li>身体介護 / 家事援助</li>
+                                <li>通院等介助 / 生活全般の支援</li>
+                            </ul>
+                        </div>
+                        <div class="service-category">
+                            <h4>重度訪問介護</h4>
+                            <ul>
+                                <li>長時間の見守り支援</li>
+                                <li>医療的ケアを含む生活支援</li>
+                                <li>外出支援 / 日常生活全般の包括的サポート</li>
+                            </ul>
+                        </div>
+                        <p class="service-summary">障害をお持ちの方の“自分らしい暮らし”に寄り添い、<br>ご本人の希望や生活の状態に合わせた支援を行います。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 利用者様へ（追加セクション） -->
+        <section id="user-guide" class="section bg-primary-light">
+            <div class="container">
+                <h2 class="section-title">サービスをご検討の方へ</h2>
+                <div class="user-guide-grid">
+                    <div class="user-message">
+                        <h3>「Niceケア」が大切にしていること</h3>
+                        <p>私たちは、ただ家事を代行したり、体を支えたりするだけではありません。利用者様が「自分らしく、どう生きたいか」という想いに寄り添い、日々の小さな喜びや安心を共有できる存在でありたいと考えています。</p>
+                        <p style="margin-top: 15px;">ご家族様にとっても、介護の負担を減らすだけでなく、心の支えとなれるよう丁寧なコミュニケーションを心がけています。どんな些細な不安でも、まずは私たちにお聞かせください。</p>
+                    </div>
+                    <div class="flow-box">
+                        <h3 style="margin-bottom: 25px; color: #333; font-size: 1.3rem;">ご利用までの流れ</h3>
+                        <div class="flow-list">
+                            <div class="flow-item">
+                                <div class="flow-num">1</div>
+                                <div class="flow-text">
+                                    <h4>お問い合わせ</h4>
+                                    <p>まずはお電話または本サイトのフォームよりお問い合わせください。</p>
+                                </div>
+                            </div>
+                            <div class="flow-item">
+                                <div class="flow-num">2</div>
+                                <div class="flow-text">
+                                    <h4>ご相談・ヒアリング</h4>
+                                    <p>専門スタッフがご自宅へ伺い、お困りごとやご希望を詳しく伺います。</p>
+                                </div>
+                            </div>
+                            <div class="flow-item">
+                                <div class="flow-num">3</div>
+                                <div class="flow-text">
+                                    <h4>プラン作成・ご契約</h4>
+                                    <p>ケアマネジャー様と連携し、最適な支援計画を作成。内容に合意いただければご契約となります。</p>
+                                </div>
+                            </div>
+                            <div class="flow-item">
+                                <div class="flow-num">4</div>
+                                <div class="flow-text">
+                                    <h4>サービス開始</h4>
+                                    <p>担当ヘルパーが伺い、心を込めた支援を開始いたします。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ケアマネジャー様へ -->
+        <section id="caremanager" class="section">
+            <div class="container">
+                <div class="cm-box">
+                    <h2 class="section-title" style="margin-bottom:30px;">ケアマネジャー様・<br>相談支援専門員様へ</h2>
+                    <p class="cm-intro">良質な支援には“連携の質”が大切です。</p>
+                    <ul class="cm-list">
+                        <li>迅速な受け入れ＆調整</li>
+                        <li>状況変化のスピーディーなご報告</li>
+                        <li>丁寧なサービス記録</li>
+                        <li>定期的な情報共有</li>
+                    </ul>
+                    <p class="cm-footer">チーム支援の一員として、地域全体の安心を支えます。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 採用情報 -->
+        <section id="recruit" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">採用情報</h2>
+                <div class="recruit-container">
+                    <h3>一緒に地域を支える仲間を募集</h3>
+                    <p>Niceケアでは、利用者様に寄り添えるスタッフを歓迎します。</p>
+                    
+                    <div class="recruit-details">
+                        <p style="margin-bottom: 15px;"><strong style="color: var(--primary-color);">■ 募集職種：</strong><br>訪問介護員（常勤・登録）</p>
+                        <p><strong style="color: var(--primary-color);">■ 私たちの雰囲気：</strong></p>
+                        <ul class="check-list">
+                            <li>直行直帰可</li>
+                            <li>同行研修あり</li>
+                            <li>働き方の相談可</li>
+                            <li>チームで支える風土</li>
+                        </ul>
+                    </div>
+                    
+                    <p class="recruit-message">思いやりを大切にできるあなたを、<br>私たちは待っています。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 事業所概要・お問い合わせ -->
+        <section id="access" class="section">
+            <div class="container">
+                <h2 class="section-title">お問い合わせ・事業所概要</h2>
+                
+                <!-- お問い合わせフォーム -->
+                <div class="contact-form-wrapper">
+                    <h3 style="margin-bottom: 25px; text-align: center;">お問い合わせフォーム</h3>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label>お問い合わせ項目<span>必須</span></label>
+                            <select class="form-control" required>
+                                <option value="">選択してください</option>
+                                <option value="service">サービス利用について</option>
+                                <option value="recruit">採用について</option>
+                                <option value="other">その他</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>お名前<span>必須</span></label>
+                            <input type="text" class="form-control" placeholder="例：山田 太郎" required>
+                        </div>
+                        <div class="form-group">
+                            <label>お電話番号<span>必須</span></label>
+                            <input type="tel" class="form-control" placeholder="例：090-0000-0000" required>
+                        </div>
+                        <div class="form-group">
+                            <label>メールアドレス</label>
+                            <input type="email" class="form-control" placeholder="例：example@mail.com">
+                        </div>
+                        <div class="form-group">
+                            <label>お問い合わせ内容<span>必須</span></label>
+                            <textarea class="form-control" rows="5" placeholder="ご質問やご相談内容をご記入ください" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">送信する</button>
+                    </form>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-text">
+                        <dl>
+                            <dt>事業所名</dt>
+                            <dd>訪問介護 Niceケア</dd>
+                            
+                            <dt>サービス種別</dt>
+                            <dd>① 訪問介護<br>② 居宅介護・重度訪問介護</dd>
+                            
+                            <dt>所在地</dt>
+                            <dd>〒186-0002<br>東京都国立市東1-17-20<br>サンライズ21ビル 404号室</dd>
+                            
+                            <dt>営業時間</dt>
+                            <dd>9:00～18:00</dd>
+                        </dl>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <h3>お電話でのご連絡</h3>
+                        <p class="contact-note" style="margin-top:0; margin-bottom:15px;">お急ぎの方、直接お話しされたい方は<br>こちらまでお願いいたします。</p>
+                        
+                        <div style="background:#fff; padding:15px; border-radius:10px; margin-bottom:15px;">
+                            <span style="font-size:0.8rem; color:#666;">TEL</span>
+                            <p class="tel">042-505-9904</p>
+                            <p style="font-size:0.9rem; color:#666;">FAX: 042-505-8195</p>
+                        </div>
+                        
+                        <p class="mail">✉ nicecare2024@gmail.com</p>
+                        
+                        <p class="contact-note">※営業時間外はフォームよりメッセージをいただければ、<br>翌営業日以降に担当よりご連絡差し上げます。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 訪問介護 Niceケア All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
